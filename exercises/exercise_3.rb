@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 require_relative '../setup'
 require_relative './exercise_1'
 require_relative './exercise_2'
 
-puts "Exercise 3"
-puts "----------"
+puts 'Exercise 3'
+puts '----------'
 
 # Load the third store (into @store3) as you did the other two before.
 # Using Active Record's destroy method, delete the store from the database.

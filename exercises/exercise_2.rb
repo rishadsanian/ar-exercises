@@ -1,12 +1,12 @@
+# frozen_string_literal: true
+
 require_relative '../setup'
 require_relative './exercise_1'
 
-puts "Exercise 2"
-puts "----------"
+puts 'Exercise 2'
+puts '----------'
 
 # Exercise 2: Update the first store
-
-
 
 # id | name | annual_revenue | mens_apparel | womens_apparel | created_at | updated_at
 # Your code goes here ...
@@ -18,6 +18,5 @@ puts "----------"
 @store2 = Store.find_by(id: 2)
 
 # Update the first store (@store1) instance in the database. (Change its name or something.)
-@store1.name = "Surrey"
+@store1.name = 'Vancouver'
 @store1.save
-

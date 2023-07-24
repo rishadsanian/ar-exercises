@@ -1,6 +1,8 @@
-# A sample Gemfile
-source "https://rubygems.org"
+# frozen_string_literal: true
 
-gem 'pry' # for debugging
-gem 'pg'
+# A sample Gemfile
+source 'https://rubygems.org'
+
 gem 'activerecord', '6.1.5.1'
+gem 'pg'
+gem 'pry' # for debugging
