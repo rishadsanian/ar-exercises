@@ -18,6 +18,7 @@ end
 
 private
 
+# method to validate conditional apparel carry
 def must_carry_apparel
   return if mens_apparel? || womens_apparel?
 
