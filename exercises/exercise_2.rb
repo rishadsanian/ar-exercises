@@ -17,6 +17,8 @@ puts '----------'
 # Load the second store from the database and assign it to @store2.
 @store2 = Store.find_by(id: 2)
 
+# Add more stores
+
 # Update the first store (@store1) instance in the database. (Change its name or something.)
 @store1.name = 'Vancouver'
 @store1.save
