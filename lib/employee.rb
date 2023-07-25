@@ -19,7 +19,7 @@ class Employee < ActiveRecord::Base
 
   # Before an employee is created, AR should automatically create a random (8 character string) password.
   # before_create :generate_random_password
-  after_create_commit :generate_random_password #add commit after create to save
+  after_create_commit :generate_random_password # add commit after create to save
 
   private
 
@@ -27,4 +27,3 @@ class Employee < ActiveRecord::Base
     self.password = SecureRandom.hex(4) # Generates a random 8-character string
   end
 end
-

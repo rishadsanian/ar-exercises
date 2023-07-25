@@ -14,13 +14,23 @@ class Store < ActiveRecord::Base
   # BONUS: Stores must carry at least one of the men's or women's apparel
   # (hint: use a custom validation method - don't use a Validator class)
   validate :must_carry_apparel
-end
 
-private
+  before_destroy :check_for_employees
+end
 
 # method to validate conditional apparel carry
 def must_carry_apparel
   return if mens_apparel? || womens_apparel?
 
   errors.add(:base, 'Store must carry at least one of men\'s or women\'s apparel')
+end
+
+# Register a callback on the Store model that will help you stop the destroy
+# life cycle from taking place in that condition.
+
+def check_for_employees
+  return unless employees.any?
+
+  errors.add(:base, 'Cannot destroy store with employees')
+  throw(:abort)
 end
