@@ -16,4 +16,15 @@ class Employee < ActiveRecord::Base
 
   # Employees must always have a store that they belong to (can't have an employee that is not assigned a store)
   validates :store, presence: true
+
+  # Before an employee is created, AR should automatically create a random (8 character string) password.
+  # before_create :generate_random_password
+  after_create_commit :generate_random_password #add commit after create to save
+
+  private
+
+  def generate_random_password
+    self.password = SecureRandom.hex(4) # Generates a random 8-character string
+  end
 end
+
